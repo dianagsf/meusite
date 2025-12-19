@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html class="" lang="pt-BR">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>Chatbots &amp; IA - Basic Line Sistemas</title>
+		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<script>
+			tailwind.config = {
+				darkMode: "class",
+				theme: {
+					extend: {
+						colors: {
+							primary: "#1c558a",
+							secondary: "#0ea5e9",
+							"background-light": "#f6f7f8",
+							"background-dark": "#121920",
+							"surface-light": "#ffffff",
+							"surface-dark": "#1e293b",
+							"text-light": "#334155",
+							"text-dark": "#e2e8f0",
+						},
+						fontFamily: {
+							display: "Space Grotesk",
+							body: ["Inter", "sans-serif"],
+						},
+						borderRadius: {
+							DEFAULT: "0.25rem",
+							lg: "0.5rem",
+							xl: "0.75rem",
+							full: "9999px",
+						},
+					},
+				},
+			};
+		</script>
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+			::-webkit-scrollbar {
+				width: 8px;
+			}
+			::-webkit-scrollbar-track {
+				background: transparent;
+			}
+			::-webkit-scrollbar-thumb {
+				background: #cbd5e1;
+				border-radius: 4px;
+			}
+			.dark ::-webkit-scrollbar-thumb {
+				background: #475569;
+			}
+			.step-connector::after {
+				content: "";
+				position: absolute;
+				top: 2rem;
+				left: 50%;
+				width: 100%;
+				height: 2px;
+				background-color: #cbd5e1;
+				z-index: 0;
+			}
+			.dark .step-connector::after {
+				background-color: #334155;
+			}
+			@media (max-width: 768px) {
+				.step-connector::after {
+					display: none;
+				}
+			}
+		</style>
+	</head>
+	<body
+		class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body transition-colors duration-300"
+	>
+		<header
+			class="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/90 backdrop-blur-md dark:border-gray-800 dark:bg-background-dark/90"
+		>
+			<div
+				class="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6"
+			>
+				<a href="index.html" class="flex items-center gap-3">
+					<div
+						class="flex size-10 items-center justify-center rounded-lg bg-primary text-white shadow-lg"
+					>
+						<span class="material-symbols-outlined">settings_suggest</span>
+					</div>
+					<div class="flex flex-col">
+						<h2 class="text-xl font-bold leading-none dark:text-white">
+							Basic Line
+						</h2>
+						<span
+							class="text-[0.65rem] font-medium uppercase tracking-widest text-primary"
+							>Sistemas</span
+						>
+					</div>
+				</a>
+
+				<nav class="hidden md:flex items-center gap-8">
+					<a
+						class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300"
+						href="index.html"
+						>Início</a
+					>
+					<a
+						class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300"
+						href="sobre_nos.html"
+						>Sobre Nós</a
+					>
+
+					<div class="relative group">
+						<button
+							class="flex items-center gap-1 text-sm font-medium hover:text-primary transition-colors dark:text-gray-300 py-7"
+						>
+							Serviços
+							<span class="material-symbols-outlined text-sm">expand_more</span>
+						</button>
+						<div
+							class="absolute left-0 top-[100%] hidden w-56 rounded-xl border border-gray-100 bg-white p-2 shadow-xl group-hover:block dark:border-gray-800 dark:bg-gray-900"
+						>
+							<a
+								href="servicos_sistemas.html"
+								class="block rounded-lg px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+								>Sistemas Web</a
+							>
+							<a
+								href="servicos_apps.html"
+								class="block rounded-lg px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+								>Apps Mobile</a
+							>
+							<a
+								href="servicos_chatbots.html"
+								class="block rounded-lg px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+								>Chatbots & IA</a
+							>
+							<a
+								href="servicos_infraestrutura.html"
+								class="block rounded-lg px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+								>Infraestrutura</a
+							>
+						</div>
+					</div>
+
+					<a
+						class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300"
+						href="portifolio.html"
+						>Portfólio</a
+					>
+					<a
+						class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300"
+						href="contato.html"
+						>Contato</a
+					>
+				</nav>
+
+				<div class="flex items-center gap-4">
+					<button
+						id="theme-toggle"
+						class="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-white"
+					>
+						<span class="material-symbols-outlined dark:hidden">dark_mode</span>
+						<span class="material-symbols-outlined hidden dark:block"
+							>light_mode</span
+						>
+					</button>
+					<a
+						href="contato.html"
+						class="hidden sm:block rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white hover:bg-primary-dark"
+						>Orçamento</a
+					>
+				</div>
+			</div>
+		</header>
+		<div
+			class="relative bg-gradient-to-r from-primary to-blue-600 dark:from-blue-900 dark:to-cyan-900 overflow-hidden"
+		>
+			<div class="absolute inset-0 bg-black opacity-20 pattern-grid-lg"></div>
+			<div
+				class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center relative z-10"
+			>
+				<span
+					class="inline-block py-1 px-3 rounded-full bg-blue-500/30 text-white text-sm font-semibold mb-6 backdrop-blur-sm border border-blue-400/30"
+					>Soluções de IA Generativa</span
+				>
+				<h1
+					class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6 font-display"
+				>
+					Chatbots &amp; Inteligência Artificial
+				</h1>
+				<p
+					class="mt-4 max-w-3xl mx-auto text-xl text-blue-50 dark:text-gray-200 leading-relaxed"
+				>
+					Transforme o atendimento da sua empresa com assistentes virtuais
+					inteligentes integrados ao WhatsApp. Automação humanizada que escala o
+					seu negócio.
+				</p>
+				<div class="mt-10 flex justify-center gap-4">
+					<a
+						class="px-8 py-3 rounded-lg bg-white text-primary font-bold hover:bg-gray-100 transition shadow-lg"
+						href="#contato"
+						>Falar com Especialista</a
+					>
+					<a
+						class="px-8 py-3 rounded-lg bg-transparent border border-white text-white font-bold hover:bg-white/10 transition"
+						href="#como-funciona"
+						>Como Funciona</a
+					>
+				</div>
+			</div>
+			<div
+				class="absolute -bottom-24 -right-24 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl"
+			></div>
+			<div
+				class="absolute -top-24 -left-24 w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl"
+			></div>
+		</div>
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+			<div class="flex flex-col md:flex-row items-center gap-16 mb-24">
+				<div class="md:w-1/2">
+					<div
+						class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700 group"
+					>
+						<img
+							alt="Interface de chatbot com inteligência artificial"
+							class="w-full h-auto object-cover transform transition duration-700 group-hover:scale-105"
+							src="https://lh3.googleusercontent.com/aida-public/AB6AXuAr6Qxqm9J10oRxtNSdZad-b37cpSfT6YYDz1Eqh9c1cVgUEErQ32Iajos9Ic3-vyRqVA4nb6Vg9zY73Ccem8ZY3mfnO7WYrU4DWes-zLYQngxPlnka6o29N02GiXWL31xQNgMGn4QRIJPfv_uik8dgFLdgsIvRp2I7kdqRirWOHPTD9Nj8z2AGW5Wng9RkCBF2i5Z8MXGCHXQiEVKdia0wRlX-isUQLbunQSv4m8M1KK_eEsqNtkIID-hDoJ4iVK5b232ur2nFjw"
+						/>
+						<div
+							class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8"
+						>
+							<div class="flex items-center text-white gap-3">
+								<span class="material-icons text-green-400 text-4xl"
+									>whatsapp</span
+								>
+								<div>
+									<p class="font-bold text-lg">Integração Oficial</p>
+									<p class="text-sm text-gray-300">WhatsApp Business API</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="md:w-1/2">
+					<h2
+						class="text-3xl font-bold text-gray-900 dark:text-white mb-6 font-display"
+					>
+						Atendimento 24/7 com o Poder da IA
+					</h2>
+					<p
+						class="text-gray-600 dark:text-gray-400 mb-6 text-lg leading-relaxed"
+					>
+						Nossos chatbots não seguem apenas scripts rígidos. Utilizamos
+						<strong>Processamento de Linguagem Natural (NLP)</strong> e modelos
+						de IA generativa para entender a intenção do seu cliente,
+						proporcionando conversas fluidas e resolutivas.
+					</p>
+					<ul class="space-y-4 mb-8">
+						<li class="flex items-start">
+							<span class="material-icons text-green-500 mr-3 mt-1"
+								>check_circle</span
+							>
+							<span class="text-gray-700 dark:text-gray-300"
+								>Integração nativa com <strong>WhatsApp</strong>, Instagram e
+								Web.</span
+							>
+						</li>
+						<li class="flex items-start">
+							<span class="material-icons text-green-500 mr-3 mt-1"
+								>check_circle</span
+							>
+							<span class="text-gray-700 dark:text-gray-300"
+								>Transbordo inteligente para atendimento humano quando
+								necessário.</span
+							>
+						</li>
+						<li class="flex items-start">
+							<span class="material-icons text-green-500 mr-3 mt-1"
+								>check_circle</span
+							>
+							<span class="text-gray-700 dark:text-gray-300"
+								>Aprendizado contínuo com base nas interações passadas.</span
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mb-24">
+				<div class="text-center mb-12">
+					<span class="text-primary font-bold tracking-wider uppercase text-sm"
+						>Vantagens Competitivas</span
+					>
+					<h2
+						class="text-3xl font-bold text-gray-900 dark:text-white mt-2 font-display"
+					>
+						Por que automatizar seu atendimento?
+					</h2>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+					<div
+						class="bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition duration-300"
+					>
+						<div
+							class="w-14 h-14 bg-blue-100 dark:bg-blue-900/50 rounded-lg flex items-center justify-center mb-6 text-primary"
+						>
+							<span class="material-icons text-3xl">schedule</span>
+						</div>
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+							Disponibilidade Total
+						</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm">
+							Sua empresa aberta 24 horas por dia, 7 dias por semana, sem filas
+							de espera.
+						</p>
+					</div>
+					<div
+						class="bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition duration-300"
+					>
+						<div
+							class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/50 rounded-lg flex items-center justify-center mb-6 text-indigo-600"
+						>
+							<span class="material-icons text-3xl">trending_down</span>
+						</div>
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+							Redução de Custos
+						</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm">
+							Diminua custos operacionais automatizando até 80% das solicitações
+							repetitivas.
+						</p>
+					</div>
+					<div
+						class="bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition duration-300"
+					>
+						<div
+							class="w-14 h-14 bg-cyan-100 dark:bg-cyan-900/50 rounded-lg flex items-center justify-center mb-6 text-cyan-600"
+						>
+							<span class="material-icons text-3xl">psychology</span>
+						</div>
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+							Respostas Humanizadas
+						</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm">
+							IA treinada no tom de voz da sua marca para criar empatia e
+							conexão.
+						</p>
+					</div>
+					<div
+						class="bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition duration-300"
+					>
+						<div
+							class="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/50 rounded-lg flex items-center justify-center mb-6 text-emerald-600"
+						>
+							<span class="material-icons text-3xl">insights</span>
+						</div>
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+							Dados &amp; Insights
+						</h3>
+						<p class="text-gray-600 dark:text-gray-400 text-sm">
+							Dashboards completos com métricas de atendimento e análise de
+							sentimento.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div
+				class="bg-gray-50 dark:bg-[#16202a] rounded-3xl p-8 md:p-16 mb-24 relative overflow-hidden"
+				id="como-funciona"
+			>
+				<div
+					class="absolute top-0 right-0 w-64 h-64 bg-primary opacity-5 rounded-bl-full"
+				></div>
+				<div class="text-center mb-16">
+					<h2
+						class="text-3xl font-bold text-gray-900 dark:text-white font-display"
+					>
+						Nosso Processo de Desenvolvimento
+					</h2>
+					<p class="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
+						Metodologia ágil para entregar valor rápido e garantir a qualidade
+						do seu assistente virtual.
+					</p>
+				</div>
+				<div class="relative grid grid-cols-1 md:grid-cols-4 gap-8">
+					<div
+						class="relative z-10 flex flex-col items-center text-center step-connector"
+					>
+						<div
+							class="w-16 h-16 bg-white dark:bg-surface-dark border-2 border-primary rounded-full flex items-center justify-center mb-6 shadow-md z-10"
+						>
+							<span class="material-icons text-primary text-2xl">search</span>
+						</div>
+						<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+							1. Imersão
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400">
+							Análise do fluxo de atendimento e definição da persona do bot.
+						</p>
+					</div>
+					<div
+						class="relative z-10 flex flex-col items-center text-center step-connector"
+					>
+						<div
+							class="w-16 h-16 bg-white dark:bg-surface-dark border-2 border-primary rounded-full flex items-center justify-center mb-6 shadow-md z-10"
+						>
+							<span class="material-icons text-primary text-2xl">code</span>
+						</div>
+						<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+							2. Desenvolvimento
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400">
+							Configuração de fluxos, integração de API e treinamento da IA.
+						</p>
+					</div>
+					<div
+						class="relative z-10 flex flex-col items-center text-center step-connector"
+					>
+						<div
+							class="w-16 h-16 bg-white dark:bg-surface-dark border-2 border-primary rounded-full flex items-center justify-center mb-6 shadow-md z-10"
+						>
+							<span class="material-icons text-primary text-2xl">science</span>
+						</div>
+						<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+							3. Testes &amp; Homologação
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400">
+							Validação de cenários reais e ajustes finos nas respostas.
+						</p>
+					</div>
+					<div class="relative z-10 flex flex-col items-center text-center">
+						<div
+							class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30 z-10"
+						>
+							<span class="material-icons text-2xl">rocket_launch</span>
+						</div>
+						<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+							4. Go Live
+						</h3>
+						<p class="text-sm text-gray-600 dark:text-gray-400">
+							Lançamento oficial e monitoramento contínuo de performance.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="mb-12">
+				<h2
+					class="text-3xl font-bold text-gray-900 dark:text-white mb-8 font-display border-l-4 border-primary pl-4"
+				>
+					Casos de Sucesso
+				</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div
+						class="group bg-surface-light dark:bg-surface-dark rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full transform hover:-translate-y-1"
+					>
+						<div
+							class="h-48 bg-gray-200 dark:bg-gray-700 relative overflow-hidden flex items-center justify-center bg-gradient-to-br from-indigo-600 to-purple-700"
+						>
+							<span class="material-icons text-6xl text-white opacity-80"
+								>account_balance</span
+							>
+							<div
+								class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded uppercase"
+							>
+								Financeiro
+							</div>
+						</div>
+						<div class="p-6 flex-1 flex flex-col">
+							<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+								Assistente Virtual Cooperativa
+							</h3>
+							<p class="text-gray-600 dark:text-gray-400 mb-4 text-sm flex-1">
+								Automação de 2ª via de boletos, consulta de saldos e negociação
+								de dívidas, reduzindo em 45% as chamadas no call center.
+							</p>
+							<span
+								class="inline-flex items-center text-primary font-semibold text-sm mt-auto"
+							>
+								Resultado: +90% de Satisfação
+							</span>
+						</div>
+					</div>
+					<div
+						class="group bg-surface-light dark:bg-surface-dark rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full transform hover:-translate-y-1"
+					>
+						<div
+							class="h-48 bg-gray-200 dark:bg-gray-700 relative overflow-hidden flex items-center justify-center bg-gradient-to-br from-blue-600 to-cyan-500"
+						>
+							<span class="material-icons text-6xl text-white opacity-80"
+								>support_agent</span
+							>
+							<div
+								class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded uppercase"
+							>
+								Varejo
+							</div>
+						</div>
+						<div class="p-6 flex-1 flex flex-col">
+							<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+								Triagem de Vendas Inteligente
+							</h3>
+							<p class="text-gray-600 dark:text-gray-400 mb-4 text-sm flex-1">
+								Chatbot que qualifica leads, agenda reuniões e tira dúvidas
+								sobre produtos, integrado diretamente ao CRM da empresa.
+							</p>
+							<span
+								class="inline-flex items-center text-primary font-semibold text-sm mt-auto"
+							>
+								Resultado: 3x mais Leads Qualificados
+							</span>
+						</div>
+					</div>
+					<div
+						class="group bg-surface-light dark:bg-surface-dark rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full transform hover:-translate-y-1"
+					>
+						<div
+							class="h-48 bg-gray-200 dark:bg-gray-700 relative overflow-hidden"
+						>
+							<img
+								alt="Pessoa utilizando app mobile"
+								class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+								src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHLfpx6wT09mtCyaZrzv6HM9DENF5QJhzrNNRlswYr7dWDQ4ZbDMN7L-FP0OzPJQvpoOZHIs7Qas3G2LLxjur66Tw4AQtmHoYlVsPulF8rZEXHkqt0jOnt76GemDD7QNN7Y5VDoBcxIY54pkCZLTCwZ_Ta5A4QWN-KYxcfHC__P3QhZn6zait9p4DngFjFtuaE3C6CKNc4Yij9oHa1nbhXzubgtVLhXhsLYRYqwg9J6JAW4PToMj4Bi0xKrP3E9hw8-XGPHqtoeA"
+							/>
+							<div
+								class="absolute top-4 right-4 bg-white/20 backdrop-blur-md text-white text-xs font-bold px-2 py-1 rounded uppercase"
+							>
+								App Mobile
+							</div>
+						</div>
+						<div class="p-6 flex-1 flex flex-col">
+							<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
+								Suporte In-App
+							</h3>
+							<p class="text-gray-600 dark:text-gray-400 mb-4 text-sm flex-1">
+								Integração de assistente de IA dentro do aplicativo mobile,
+								permitindo suporte instantâneo sem sair da tela do usuário.
+							</p>
+							<span
+								class="inline-flex items-center text-primary font-semibold text-sm mt-auto"
+							>
+								Resultado: Retenção de Usuários Elevada
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				class="bg-surface-light dark:bg-surface-dark rounded-2xl p-8 md:p-12 shadow-xl border border-gray-100 dark:border-gray-800 flex flex-col md:flex-row items-center justify-between gap-8 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"
+				id="contato"
+			>
+				<div class="md:w-2/3">
+					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+						Pronto para inovar seu atendimento?
+					</h2>
+					<p class="text-gray-600 dark:text-gray-400 text-lg">
+						Agende uma demonstração gratuita e veja na prática como nossos
+						Chatbots com IA podem revolucionar seus resultados.
+					</p>
+				</div>
+				<div class="md:w-1/3 flex justify-center md:justify-end">
+					<button
+						class="bg-primary hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transform transition hover:scale-105 flex items-center"
+					>
+						<span class="material-icons mr-2">chat</span>
+						Solicitar Demonstração
+					</button>
+				</div>
+			</div>
+		</div>
+		<footer
+			class="bg-gray-100 dark:bg-black py-12 border-t border-gray-200 dark:border-gray-800"
+		>
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+					<div class="col-span-1 md:col-span-1">
+						<div class="flex flex-col">
+							<span
+								class="text-xl font-bold tracking-tight text-gray-800 dark:text-white"
+								>BASIC LINE</span
+							>
+							<div class="flex items-center">
+								<span
+									class="text-primary text-xs font-semibold uppercase tracking-wider"
+									>Sistemas</span
+								>
+							</div>
+						</div>
+						<p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+							Tecnologia a favor do seu crescimento.
+						</p>
+					</div>
+					<div>
+						<h4 class="font-bold text-gray-900 dark:text-white mb-4">
+							Navegação
+						</h4>
+						<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+							<li>
+								<a
+									href="sobre_nos.html"
+									class="hover:text-primary transition-all"
+									>Sobre Nós</a
+								>
+							</li>
+							<li>
+								<a
+									href="portifolio.html"
+									class="hover:text-primary transition-all"
+									>Portfólio</a
+								>
+							</li>
+							<li>
+								<a href="contato.html" class="hover:text-primary transition-all"
+									>Contato</a
+								>
+							</li>
+							<li>
+								<a
+									href="index.html#servicos"
+									class="hover:text-primary transition-all"
+									>Nossos Serviços</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="font-bold text-gray-900 dark:text-white mb-4">
+							Contato
+						</h4>
+						<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+							<li class="flex items-center">
+								<span class="material-icons text-xs mr-2">email</span>
+								contato@basicline.com.br
+							</li>
+							<li class="flex items-center">
+								<span class="material-icons text-xs mr-2">phone</span> (21)
+								3332-5192
+							</li>
+							<li class="flex items-center">
+								<span class="material-icons text-xs mr-2">location_on</span> Av.
+								das Américas, 5001 - RJ
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="font-bold text-gray-900 dark:text-white mb-4">Social</h4>
+						<div class="flex space-x-4">
+							<a
+								class="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center hover:bg-blue-800 transition"
+								href="#"
+								><i class="text-lg font-bold">f</i></a
+							>
+							<a
+								class="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center hover:bg-blue-600 transition"
+								href="#"
+								><i class="text-lg font-bold">in</i></a
+							>
+							<a
+								class="w-10 h-10 rounded-full bg-blue-800 text-white flex items-center justify-center hover:bg-blue-700 transition"
+								href="#"
+								><i class="text-lg font-bold">yt</i></a
+							>
+						</div>
+					</div>
+				</div>
+				<div
+					class="pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center bg-white dark:bg-black p-4 mt-8 rounded-lg"
+				>
+					<p class="text-sm text-gray-600 dark:text-gray-400">
+						Basic Line Sistemas - © 2024
+					</p>
+					<p class="text-sm text-gray-500 dark:text-gray-500 opacity-80">
+						Desenvolvendo o futuro.
+					</p>
+				</div>
+			</div>
+		</footer>
+		<script>
+			const themeToggle = document.getElementById("theme-toggle");
+			const html = document.documentElement;
+
+			// Aplica o tema salvo ao carregar a página
+			if (localStorage.getItem("theme") === "dark") {
+				html.classList.add("dark");
+			}
+
+			// Alterna o tema e salva a preferência
+			themeToggle.addEventListener("click", () => {
+				html.classList.toggle("dark");
+				const isDark = html.classList.contains("dark");
+				localStorage.setItem("theme", isDark ? "dark" : "light");
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html class="" lang="pt-BR">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>Sobre Nós - Basic Line Sistemas</title>
+		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<script>
+			tailwind.config = {
+				darkMode: "class",
+				theme: {
+					extend: {
+						colors: {
+							primary: "#1c558a",
+							secondary: "#0ea5e9",
+							"background-light": "#f6f7f8",
+							"background-dark": "#121920",
+							"surface-light": "#ffffff",
+							"surface-dark": "#1e293b",
+							"text-light": "#334155",
+							"text-dark": "#e2e8f0",
+						},
+						fontFamily: {
+							display: "Space Grotesk",
+							body: ["Inter", "sans-serif"],
+						},
+						borderRadius: {
+							DEFAULT: "0.25rem",
+							lg: "0.5rem",
+							xl: "0.75rem",
+							full: "9999px",
+						},
+					},
+				},
+			};
+		</script>
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+			::-webkit-scrollbar {
+				width: 8px;
+			}
+			::-webkit-scrollbar-track {
+				background: transparent;
+			}
+			::-webkit-scrollbar-thumb {
+				background: #cbd5e1;
+				border-radius: 4px;
+			}
+			.dark ::-webkit-scrollbar-thumb {
+				background: #475569;
+			}
+		</style>
+	</head>
+	<body
+		class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body transition-colors duration-300"
+	>
+		<header
+			class="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/90 backdrop-blur-md dark:border-gray-800 dark:bg-background-dark/90"
+		>
+			<div
+				class="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6"
+			>
+				<a href="index.html" class="flex items-center gap-3">
+					<div
+						class="flex size-10 items-center justify-center rounded-lg bg-primary text-white shadow-lg"
+					>
+						<span class="material-symbols-outlined">settings_suggest</span>
+					</div>
+					<div class="flex flex-col">
+						<h2 class="text-xl font-bold leading-none dark:text-white">
+							Basic Line
+						</h2>
+						<span
+							class="text-[0.65rem] font-medium uppercase tracking-widest text-primary"
+							>Sistemas</span
+						>
+					</div>
+				</a>
+
+				<nav class="hidden md:flex items-center gap-8">
+					<a
+						class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300"
+						href="index.html"
+						>Início</a
+					>
+					<a
+						class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300"
+						href="sobre_nos.html"
+						>Sobre Nós</a
+					>
+
+					<div class="relative group">
+						<button
+							class="flex items-center gap-1 text-sm font-medium hover:text-primary transition-colors dark:text-gray-300 py-7"
+						>
+							Serviços
+							<span class="material-symbols-outlined text-sm">expand_more</span>
+						</button>
+						<div
+							class="absolute left-0 top-[100%] hidden w-56 rounded-xl border border-gray-100 bg-white p-2 shadow-xl group-hover:block dark:border-gray-800 dark:bg-gray-900"
+						>
+							<a
+								href="servicos_sistemas.html"
+								class="block rounded-lg px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+								>Sistemas Web</a
+							>
+							<a
+								href="servicos_apps.html"
+								class="block rounded-lg px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+								>Apps Mobile</a
+							>
+							<a
+								href="servicos_chatbots.html"
+								class="block rounded-lg px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+								>Chatbots & IA</a
+							>
+							<a
+								href="servicos_infraestrutura.html"
+								class="block rounded-lg px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+								>Infraestrutura</a
+							>
+						</div>
+					</div>
+
+					<a
+						class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300"
+						href="portifolio.html"
+						>Portfólio</a
+					>
+					<a
+						class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300"
+						href="contato.html"
+						>Contato</a
+					>
+				</nav>
+
+				<div class="flex items-center gap-4">
+					<button
+						id="theme-toggle"
+						class="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-white"
+					>
+						<span class="material-symbols-outlined dark:hidden">dark_mode</span>
+						<span class="material-symbols-outlined hidden dark:block"
+							>light_mode</span
+						>
+					</button>
+					<a
+						href="contato.html"
+						class="hidden sm:block rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white hover:bg-primary-dark"
+						>Orçamento</a
+					>
+				</div>
+			</div>
+		</header>
+		<div
+			class="relative bg-gradient-to-r from-primary to-blue-600 dark:from-blue-900 dark:to-cyan-900"
+		>
+			<div class="absolute inset-0 bg-black opacity-10 pattern-grid-lg"></div>
+			<div
+				class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center relative z-10"
+			>
+				<div
+					class="inline-flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-white/20"
+				>
+					<span class="material-icons text-blue-200 mr-2 text-sm">history</span>
+					<span class="text-blue-50 text-sm font-medium uppercase tracking-wide"
+						>Nossa História</span
+					>
+				</div>
+				<h1
+					class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6 font-display"
+				>
+					Inovando desde 1988<br />para construir o futuro
+				</h1>
+				<p
+					class="mt-4 max-w-2xl mx-auto text-xl text-blue-50 dark:text-gray-200 leading-relaxed"
+				>
+					Mais de três décadas de excelência em desenvolvimento de software,
+					transformando desafios complexos em soluções digitais inteligentes.
+				</p>
+			</div>
+			<div
+				class="absolute bottom-0 w-full overflow-hidden leading-none rotate-180"
+			>
+				<svg
+					class="relative block w-[calc(100%+1.3px)] h-[50px] text-background-light dark:text-background-dark fill-current"
+					data-name="Layer 1"
+					preserveAspectRatio="none"
+					viewBox="0 0 1200 120"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+					></path>
+				</svg>
+			</div>
+		</div>
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+				<div>
+					<div class="bg-blue-50 dark:bg-gray-800/50 p-6 rounded-2xl relative">
+						<div
+							class="absolute -top-4 -left-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl"
+						></div>
+						<img
+							alt="Interior do escritório moderno da Basic Line com desenvolvedores trabalhando"
+							class="rounded-xl shadow-lg w-full object-cover h-[400px] relative z-10"
+							src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiNgSgs37OEv_Njj1jhrKclVH6Av6fQ1RUx2S7kwzgWpv_gQJwO_2TrfZgpLeFh7pG6b17D6xurGSfc9I25KG4Yl00j3k6956wy0xHM4ENGwetAQ8Mhcu0wxQ0sEXyRpslp9ZYuVBok-OJNy1t8ocSYfsDGDjlKlu2rCLoAJkWxJsdBUcK-LrrEJoxvCZ-uQuqgTB8SgWOwYvRtkn6Eczh7_9m1mBFnG8dAlmBmwGRZUIHXmobiFkw_ABj7adYsHuTiD1Ektc2xA"
+						/>
+						<div
+							class="absolute -bottom-6 -right-6 bg-white dark:bg-surface-dark p-4 rounded-lg shadow-xl border border-gray-100 dark:border-gray-700 z-20 hidden md:block"
+						>
+							<div class="flex items-center gap-3">
+								<div class="bg-green-100 text-green-600 p-2 rounded-full">
+									<span class="material-icons">verified</span>
+								</div>
+								<div>
+									<p class="text-sm font-bold text-gray-900 dark:text-white">
+										35+ Anos
+									</p>
+									<p class="text-xs text-gray-500">De Experiência no Mercado</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div>
+					<span
+						class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block"
+						>Quem Somos</span
+					>
+					<h2
+						class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6 font-display"
+					>
+						Tecnologia com propósito e tradição
+					</h2>
+					<p
+						class="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"
+					>
+						Fundada em 1988, a Basic Line Sistemas nasceu com a missão de
+						descomplicar a tecnologia para empresas. Começamos desenvolvendo
+						softwares para gestão local e evoluímos junto com a revolução
+						digital.
+					</p>
+					<p
+						class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed"
+					>
+						Hoje, somos referência em desenvolvimento de Apps, Chatbots com IA e
+						Sistemas Web complexos. Nossa longevidade é prova de nossa
+						capacidade de adaptação e compromisso inabalável com a qualidade.
+						Não apenas escrevemos código; construímos parcerias duradouras.
+					</p>
+					<div class="grid grid-cols-2 gap-6">
+						<div class="border-l-4 border-primary pl-4">
+							<h4 class="font-bold text-gray-900 dark:text-white text-lg">
+								Inovação Constante
+							</h4>
+							<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+								Laboratório próprio de P&amp;D focado em IA e novas tecnologias.
+							</p>
+						</div>
+						<div class="border-l-4 border-secondary pl-4">
+							<h4 class="font-bold text-gray-900 dark:text-white text-lg">
+								Equipe Especializada
+							</h4>
+							<p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+								Profissionais sêniores com vasta experiência em múltiplos
+								setores.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bg-white dark:bg-gray-900 py-20">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl font-bold text-gray-900 dark:text-white">
+						Nossa Essência
+					</h2>
+					<p class="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+						Os pilares que sustentam cada linha de código que escrevemos e cada
+						decisão que tomamos.
+					</p>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+					<div
+						class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl shadow-lg border-t-4 border-primary hover:-translate-y-2 transition-transform duration-300"
+					>
+						<div
+							class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-6 text-primary"
+						>
+							<span class="material-icons text-3xl">flag</span>
+						</div>
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+							Missão
+						</h3>
+						<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+							Potencializar o sucesso de nossos clientes através de soluções
+							tecnológicas inovadoras, seguras e personalizadas, simplificando
+							processos complexos.
+						</p>
+					</div>
+					<div
+						class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl shadow-lg border-t-4 border-secondary hover:-translate-y-2 transition-transform duration-300"
+					>
+						<div
+							class="w-14 h-14 bg-cyan-100 dark:bg-cyan-900/30 rounded-lg flex items-center justify-center mb-6 text-secondary"
+						>
+							<span class="material-icons text-3xl">visibility</span>
+						</div>
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+							Visão
+						</h3>
+						<p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+							Ser reconhecida nacionalmente como a parceira estratégica ideal
+							para transformação digital, liderando a integração de Inteligência
+							Artificial nos negócios.
+						</p>
+					</div>
+					<div
+						class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl shadow-lg border-t-4 border-primary hover:-translate-y-2 transition-transform duration-300"
+					>
+						<div
+							class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg flex items-center justify-center mb-6 text-indigo-600 dark:text-indigo-400"
+						>
+							<span class="material-icons text-3xl">handshake</span>
+						</div>
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">
+							Valores
+						</h3>
+						<ul class="space-y-2 text-gray-600 dark:text-gray-400">
+							<li class="flex items-center">
+								<span class="w-2 h-2 bg-primary rounded-full mr-2"></span
+								>Transparência total
+							</li>
+							<li class="flex items-center">
+								<span class="w-2 h-2 bg-primary rounded-full mr-2"></span
+								>Excelência técnica
+							</li>
+							<li class="flex items-center">
+								<span class="w-2 h-2 bg-primary rounded-full mr-2"></span>Foco
+								no cliente
+							</li>
+							<li class="flex items-center">
+								<span class="w-2 h-2 bg-primary rounded-full mr-2"></span
+								>Inovação contínua
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer
+			class="bg-gray-100 dark:bg-black py-12 border-t border-gray-200 dark:border-gray-800"
+		>
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+					<div class="col-span-1 md:col-span-1">
+						<div class="flex flex-col">
+							<span
+								class="text-xl font-bold tracking-tight text-gray-800 dark:text-white"
+								>BASIC LINE</span
+							>
+							<div class="flex items-center">
+								<span
+									class="text-primary text-xs font-semibold uppercase tracking-wider"
+									>Sistemas</span
+								>
+							</div>
+						</div>
+						<p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+							Tecnologia a favor do seu crescimento.
+						</p>
+					</div>
+					<div>
+						<h4 class="font-bold text-gray-900 dark:text-white mb-4">
+							Navegação
+						</h4>
+						<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+							<li>
+								<a
+									href="sobre_nos.html"
+									class="hover:text-primary transition-all"
+									>Sobre Nós</a
+								>
+							</li>
+							<li>
+								<a
+									href="portifolio.html"
+									class="hover:text-primary transition-all"
+									>Portfólio</a
+								>
+							</li>
+							<li>
+								<a href="contato.html" class="hover:text-primary transition-all"
+									>Contato</a
+								>
+							</li>
+							<li>
+								<a
+									href="index.html#servicos"
+									class="hover:text-primary transition-all"
+									>Nossos Serviços</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="font-bold text-gray-900 dark:text-white mb-4">
+							Contato
+						</h4>
+						<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+							<li class="flex items-center">
+								<span class="material-icons text-xs mr-2">email</span>
+								contato@basicline.com.br
+							</li>
+							<li class="flex items-center">
+								<span class="material-icons text-xs mr-2">phone</span> (21)
+								3332-5192
+							</li>
+							<li class="flex items-center">
+								<span class="material-icons text-xs mr-2">location_on</span> Av.
+								das Américas, 5001 - RJ
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="font-bold text-gray-900 dark:text-white mb-4">Social</h4>
+						<div class="flex space-x-4">
+							<a
+								class="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center hover:bg-blue-800 transition"
+								href="#"
+								><i class="text-lg font-bold">f</i></a
+							>
+							<a
+								class="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center hover:bg-blue-600 transition"
+								href="#"
+								><i class="text-lg font-bold">in</i></a
+							>
+							<a
+								class="w-10 h-10 rounded-full bg-blue-800 text-white flex items-center justify-center hover:bg-blue-700 transition"
+								href="#"
+								><i class="text-lg font-bold">yt</i></a
+							>
+						</div>
+					</div>
+				</div>
+				<div
+					class="pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center bg-white dark:bg-black p-4 mt-8"
+				>
+					<p class="text-sm text-gray-600 dark:text-gray-400">
+						Basic Line Sistemas - © 2024
+					</p>
+					<p class="text-sm text-gray-500 dark:text-gray-500 opacity-80">
+						Desenvolvendo o futuro.
+					</p>
+				</div>
+			</div>
+		</footer>
+		<script>
+			const themeToggle = document.getElementById("theme-toggle");
+			const html = document.documentElement;
+
+			// Aplica o tema salvo ao carregar a página
+			if (localStorage.getItem("theme") === "dark") {
+				html.classList.add("dark");
+			}
+
+			// Alterna o tema e salva a preferência
+			themeToggle.addEventListener("click", () => {
+				html.classList.toggle("dark");
+				const isDark = html.classList.contains("dark");
+				localStorage.setItem("theme", isDark ? "dark" : "light");
+			});
+		</script>
+	</body>
+</html>

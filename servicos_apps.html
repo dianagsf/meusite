@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html class="" lang="pt-BR">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>Apps Mobile - Basic Line Sistemas</title>
+		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<script>
+			tailwind.config = {
+				darkMode: "class",
+				theme: {
+					extend: {
+						colors: {
+							primary: "#1c558a",
+							secondary: "#0ea5e9",
+							"background-light": "#f6f7f8",
+							"background-dark": "#121920",
+							"surface-light": "#ffffff",
+							"surface-dark": "#1e293b",
+							"text-light": "#334155",
+							"text-dark": "#e2e8f0",
+						},
+						fontFamily: {
+							display: "Space Grotesk",
+							body: ["Inter", "sans-serif"],
+						},
+						borderRadius: {
+							DEFAULT: "0.25rem",
+							lg: "0.5rem",
+							xl: "0.75rem",
+							full: "9999px",
+						},
+					},
+				},
+			};
+		</script>
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+			::-webkit-scrollbar {
+				width: 8px;
+			}
+			::-webkit-scrollbar-track {
+				background: transparent;
+			}
+			::-webkit-scrollbar-thumb {
+				background: #cbd5e1;
+				border-radius: 4px;
+			}
+			.dark ::-webkit-scrollbar-thumb {
+				background: #475569;
+			}
+		</style>
+	</head>
+	<body
+		class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body transition-colors duration-300"
+	>
+		<header
+			class="sticky top-0 z-50 w-full border-b border-gray-100 bg-white/90 backdrop-blur-md dark:border-gray-800 dark:bg-background-dark/90"
+		>
+			<div
+				class="mx-auto flex h-20 max-w-[1280px] items-center justify-between px-6"
+			>
+				<a href="index.html" class="flex items-center gap-3">
+					<div
+						class="flex size-10 items-center justify-center rounded-lg bg-primary text-white shadow-lg"
+					>
+						<span class="material-symbols-outlined">settings_suggest</span>
+					</div>
+					<div class="flex flex-col">
+						<h2 class="text-xl font-bold leading-none dark:text-white">
+							Basic Line
+						</h2>
+						<span
+							class="text-[0.65rem] font-medium uppercase tracking-widest text-primary"
+							>Sistemas</span
+						>
+					</div>
+				</a>
+
+				<nav class="hidden md:flex items-center gap-8">
+					<a
+						class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300"
+						href="index.html"
+						>Início</a
+					>
+					<a
+						class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300"
+						href="sobre_nos.html"
+						>Sobre Nós</a
+					>
+
+					<div class="relative group">
+						<button
+							class="flex items-center gap-1 text-sm font-medium hover:text-primary transition-colors dark:text-gray-300 py-7"
+						>
+							Serviços
+							<span class="material-symbols-outlined text-sm">expand_more</span>
+						</button>
+						<div
+							class="absolute left-0 top-[100%] hidden w-56 rounded-xl border border-gray-100 bg-white p-2 shadow-xl group-hover:block dark:border-gray-800 dark:bg-gray-900"
+						>
+							<a
+								href="servicos_sistemas.html"
+								class="block rounded-lg px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+								>Sistemas Web</a
+							>
+							<a
+								href="servicos_apps.html"
+								class="block rounded-lg px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+								>Apps Mobile</a
+							>
+							<a
+								href="servicos_chatbots.html"
+								class="block rounded-lg px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+								>Chatbots & IA</a
+							>
+							<a
+								href="servicos_infraestrutura.html"
+								class="block rounded-lg px-4 py-2 text-sm hover:bg-gray-50 dark:hover:bg-gray-800"
+								>Infraestrutura</a
+							>
+						</div>
+					</div>
+
+					<a
+						class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300"
+						href="portifolio.html"
+						>Portfólio</a
+					>
+					<a
+						class="text-sm font-medium hover:text-primary transition-colors dark:text-gray-300"
+						href="contato.html"
+						>Contato</a
+					>
+				</nav>
+
+				<div class="flex items-center gap-4">
+					<button
+						id="theme-toggle"
+						class="flex h-10 w-10 items-center justify-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 dark:text-white"
+					>
+						<span class="material-symbols-outlined dark:hidden">dark_mode</span>
+						<span class="material-symbols-outlined hidden dark:block"
+							>light_mode</span
+						>
+					</button>
+					<a
+						href="contato.html"
+						class="hidden sm:block rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white hover:bg-primary-dark"
+						>Orçamento</a
+					>
+				</div>
+			</div>
+		</header>
+		<div
+			class="relative bg-gradient-to-r from-primary to-blue-600 dark:from-blue-900 dark:to-cyan-900"
+		>
+			<div class="absolute inset-0 bg-black opacity-10 pattern-grid-lg"></div>
+			<div
+				class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center relative z-10"
+			>
+				<div
+					class="inline-flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-white/20"
+				>
+					<span class="material-icons text-blue-200 mr-2 text-sm"
+						>smartphone</span
+					>
+					<span class="text-blue-50 text-sm font-medium uppercase tracking-wide"
+						>Desenvolvimento Mobile</span
+					>
+				</div>
+				<h1
+					class="text-4xl md:text-6xl font-extrabold text-white tracking-tight mb-6 font-display"
+				>
+					Aplicativos que transformam<br />a experiência do usuário
+				</h1>
+				<p
+					class="mt-4 max-w-2xl mx-auto text-xl text-blue-50 dark:text-gray-200 leading-relaxed"
+				>
+					Desenvolvemos soluções móveis nativas e híbridas de alta performance,
+					projetadas para escalar o seu negócio e engajar seus clientes.
+				</p>
+			</div>
+			<div
+				class="absolute bottom-0 w-full overflow-hidden leading-none rotate-180"
+			>
+				<svg
+					class="relative block w-[calc(100%+1.3px)] h-[50px] text-background-light dark:text-background-dark fill-current"
+					data-name="Layer 1"
+					preserveAspectRatio="none"
+					viewBox="0 0 1200 120"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+					></path>
+				</svg>
+			</div>
+		</div>
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+				<div>
+					<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+						Desenvolvimento Multiplataforma
+					</h2>
+					<p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
+						Na Basic Line, entendemos que cada dispositivo é uma porta de
+						entrada para o seu negócio. Nossa equipe domina as tecnologias mais
+						modernas para entregar aplicativos fluidos, seguros e com design
+						intuitivo.
+					</p>
+					<ul class="space-y-4 mb-8">
+						<li class="flex items-start">
+							<span class="material-icons text-primary mt-1 mr-3"
+								>check_circle</span
+							>
+							<div>
+								<h4 class="font-bold text-gray-900 dark:text-white">
+									Alcance Total
+								</h4>
+								<p class="text-sm text-gray-600 dark:text-gray-400">
+									Presença garantida tanto na Apple App Store quanto no Google
+									Play Store.
+								</p>
+							</div>
+						</li>
+						<li class="flex items-start">
+							<span class="material-icons text-primary mt-1 mr-3"
+								>check_circle</span
+							>
+							<div>
+								<h4 class="font-bold text-gray-900 dark:text-white">
+									Performance Nativa
+								</h4>
+								<p class="text-sm text-gray-600 dark:text-gray-400">
+									Otimização de recursos de hardware para máxima velocidade e
+									fluidez.
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="grid grid-cols-2 gap-6">
+					<div
+						class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300"
+					>
+						<span
+							class="material-icons text-6xl text-gray-800 dark:text-gray-200 mb-4"
+							>apple</span
+						>
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white">iOS</h3>
+						<p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+							Swift &amp; Objective-C
+						</p>
+						<div
+							class="mt-4 w-full h-1 bg-gradient-to-r from-gray-200 to-gray-400 rounded-full"
+						></div>
+					</div>
+					<div
+						class="bg-surface-light dark:bg-surface-dark p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300"
+					>
+						<span class="material-icons text-6xl text-green-500 mb-4"
+							>android</span
+						>
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white">
+							Android
+						</h3>
+						<p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
+							Kotlin &amp; Java
+						</p>
+						<div
+							class="mt-4 w-full h-1 bg-gradient-to-r from-green-300 to-green-500 rounded-full"
+						></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bg-white dark:bg-gray-900 py-16">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<span
+						class="text-primary font-semibold tracking-wider uppercase text-sm"
+						>Metodologia Ágil</span
+					>
+					<h2
+						class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mt-2"
+					>
+						Nosso Processo de Criação
+					</h2>
+				</div>
+				<div class="relative">
+					<div
+						class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 dark:bg-gray-700 -translate-y-1/2 z-0"
+					></div>
+					<div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+						<div class="group">
+							<div
+								class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 relative text-center h-full hover:shadow-xl transition-shadow"
+							>
+								<div
+									class="w-16 h-16 mx-auto bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mb-4 text-primary font-bold text-xl group-hover:scale-110 transition-transform"
+								>
+									1
+								</div>
+								<h3
+									class="text-lg font-bold text-gray-900 dark:text-white mb-2"
+								>
+									Discovery
+								</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-400">
+									Análise de requisitos, definição de persona e planejamento
+									estratégico do produto.
+								</p>
+							</div>
+						</div>
+						<div class="group">
+							<div
+								class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 relative text-center h-full hover:shadow-xl transition-shadow"
+							>
+								<div
+									class="w-16 h-16 mx-auto bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center mb-4 text-indigo-600 dark:text-indigo-400 font-bold text-xl group-hover:scale-110 transition-transform"
+								>
+									2
+								</div>
+								<h3
+									class="text-lg font-bold text-gray-900 dark:text-white mb-2"
+								>
+									UI/UX Design
+								</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-400">
+									Criação de wireframes, protótipos navegáveis e interfaces
+									focadas na experiência do usuário.
+								</p>
+							</div>
+						</div>
+						<div class="group">
+							<div
+								class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 relative text-center h-full hover:shadow-xl transition-shadow"
+							>
+								<div
+									class="w-16 h-16 mx-auto bg-sky-100 dark:bg-sky-900 rounded-full flex items-center justify-center mb-4 text-sky-600 dark:text-sky-400 font-bold text-xl group-hover:scale-110 transition-transform"
+								>
+									3
+								</div>
+								<h3
+									class="text-lg font-bold text-gray-900 dark:text-white mb-2"
+								>
+									Dev &amp; QA
+								</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-400">
+									Codificação com arquitetura robusta e testes automatizados
+									para garantir a qualidade.
+								</p>
+							</div>
+						</div>
+						<div class="group">
+							<div
+								class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 relative text-center h-full hover:shadow-xl transition-shadow"
+							>
+								<div
+									class="w-16 h-16 mx-auto bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mb-4 text-green-600 dark:text-green-400 font-bold text-xl group-hover:scale-110 transition-transform"
+								>
+									4
+								</div>
+								<h3
+									class="text-lg font-bold text-gray-900 dark:text-white mb-2"
+								>
+									Launch
+								</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-400">
+									Publicação nas lojas (App Store e Google Play) e monitoramento
+									pós-lançamento.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+				<div>
+					<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+						O que desenvolvemos?
+					</h3>
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+						<div
+							class="flex items-center p-4 bg-white dark:bg-surface-dark rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
+						>
+							<span class="material-icons text-primary mr-3">storefront</span>
+							<span class="font-medium text-gray-800 dark:text-gray-200"
+								>E-commerce &amp; Vendas</span
+							>
+						</div>
+						<div
+							class="flex items-center p-4 bg-white dark:bg-surface-dark rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
+						>
+							<span class="material-icons text-primary mr-3"
+								>account_balance_wallet</span
+							>
+							<span class="font-medium text-gray-800 dark:text-gray-200"
+								>Fintechs &amp; Carteiras</span
+							>
+						</div>
+						<div
+							class="flex items-center p-4 bg-white dark:bg-surface-dark rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
+						>
+							<span class="material-icons text-primary mr-3"
+								>local_shipping</span
+							>
+							<span class="font-medium text-gray-800 dark:text-gray-200"
+								>Logística &amp; Rastreio</span
+							>
+						</div>
+						<div
+							class="flex items-center p-4 bg-white dark:bg-surface-dark rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
+						>
+							<span class="material-icons text-primary mr-3"
+								>health_and_safety</span
+							>
+							<span class="font-medium text-gray-800 dark:text-gray-200"
+								>Saúde &amp; Telemedicina</span
+							>
+						</div>
+						<div
+							class="flex items-center p-4 bg-white dark:bg-surface-dark rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
+						>
+							<span class="material-icons text-primary mr-3">school</span>
+							<span class="font-medium text-gray-800 dark:text-gray-200"
+								>Educação &amp; E-learning</span
+							>
+						</div>
+						<div
+							class="flex items-center p-4 bg-white dark:bg-surface-dark rounded-lg shadow-sm border border-gray-200 dark:border-gray-700"
+						>
+							<span class="material-icons text-primary mr-3"
+								>business_center</span
+							>
+							<span class="font-medium text-gray-800 dark:text-gray-200"
+								>Apps Corporativos</span
+							>
+						</div>
+					</div>
+				</div>
+				<div>
+					<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+						Por que escolher a Basic Line?
+					</h3>
+					<div class="space-y-6">
+						<div class="flex">
+							<div class="flex-shrink-0">
+								<div
+									class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
+								>
+									<span class="material-icons">security</span>
+								</div>
+							</div>
+							<div class="ml-4">
+								<h4 class="text-lg font-bold text-gray-900 dark:text-white">
+									Segurança Enterprise
+								</h4>
+								<p class="mt-1 text-gray-600 dark:text-gray-400">
+									Implementamos criptografia de ponta a ponta e seguimos
+									rigorosos padrões de segurança de dados (LGPD).
+								</p>
+							</div>
+						</div>
+						<div class="flex">
+							<div class="flex-shrink-0">
+								<div
+									class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
+								>
+									<span class="material-icons">rocket_launch</span>
+								</div>
+							</div>
+							<div class="ml-4">
+								<h4 class="text-lg font-bold text-gray-900 dark:text-white">
+									Escalabilidade Garantida
+								</h4>
+								<p class="mt-1 text-gray-600 dark:text-gray-400">
+									Arquitetura preparada para crescer junto com sua base de
+									usuários, sem perda de performance.
+								</p>
+							</div>
+						</div>
+						<div class="flex">
+							<div class="flex-shrink-0">
+								<div
+									class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white"
+								>
+									<span class="material-icons">integration_instructions</span>
+								</div>
+							</div>
+							<div class="ml-4">
+								<h4 class="text-lg font-bold text-gray-900 dark:text-white">
+									Integração Total
+								</h4>
+								<p class="mt-1 text-gray-600 dark:text-gray-400">
+									Conectamos seu app a qualquer sistema legado, API de terceiros
+									ou serviços de nuvem.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bg-background-light dark:bg-background-dark py-12">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div
+					class="bg-gradient-to-r from-primary to-blue-700 rounded-2xl p-8 md:p-16 shadow-2xl relative overflow-hidden"
+				>
+					<div
+						class="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-white opacity-10 rounded-full blur-3xl"
+					></div>
+					<div
+						class="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-white opacity-10 rounded-full blur-3xl"
+					></div>
+					<div
+						class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8"
+					>
+						<div class="md:w-2/3 text-white">
+							<h2 class="text-3xl font-bold mb-4">
+								Tem uma ideia inovadora para um app?
+							</h2>
+							<p class="text-blue-100 text-lg opacity-90">
+								Nossa equipe de especialistas está pronta para tirar seu projeto
+								do papel. Agende uma consultoria técnica gratuita.
+							</p>
+						</div>
+						<div class="md:w-1/3 flex justify-center md:justify-end">
+							<button
+								class="bg-white text-primary hover:bg-gray-100 font-bold py-4 px-8 rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-xl flex items-center"
+							>
+								<span class="material-icons mr-2">chat</span>
+								Falar com Especialista
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer
+			class="bg-gray-100 dark:bg-black py-12 border-t border-gray-200 dark:border-gray-800"
+		>
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+					<div class="col-span-1 md:col-span-1">
+						<div class="flex flex-col">
+							<span
+								class="text-xl font-bold tracking-tight text-gray-800 dark:text-white"
+								>BASIC LINE</span
+							>
+							<div class="flex items-center">
+								<span
+									class="text-primary text-xs font-semibold uppercase tracking-wider"
+									>Sistemas</span
+								>
+							</div>
+						</div>
+						<p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+							Tecnologia a favor do seu crescimento.
+						</p>
+					</div>
+					<div>
+						<h4 class="font-bold text-gray-900 dark:text-white mb-4">
+							Navegação
+						</h4>
+						<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+							<li>
+								<a
+									href="sobre_nos.html"
+									class="hover:text-primary transition-all"
+									>Sobre Nós</a
+								>
+							</li>
+							<li>
+								<a
+									href="portifolio.html"
+									class="hover:text-primary transition-all"
+									>Portfólio</a
+								>
+							</li>
+							<li>
+								<a href="contato.html" class="hover:text-primary transition-all"
+									>Contato</a
+								>
+							</li>
+							<li>
+								<a
+									href="index.html#servicos"
+									class="hover:text-primary transition-all"
+									>Nossos Serviços</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="font-bold text-gray-900 dark:text-white mb-4">
+							Contato
+						</h4>
+						<ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+							<li class="flex items-center">
+								<span class="material-icons text-xs mr-2">email</span>
+								contato@basicline.com.br
+							</li>
+							<li class="flex items-center">
+								<span class="material-icons text-xs mr-2">phone</span> (21)
+								3332-5192
+							</li>
+							<li class="flex items-center">
+								<span class="material-icons text-xs mr-2">location_on</span> Av.
+								das Américas, 5001 - RJ
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h4 class="font-bold text-gray-900 dark:text-white mb-4">Social</h4>
+						<div class="flex space-x-4">
+							<a
+								class="w-10 h-10 rounded-full bg-blue-900 text-white flex items-center justify-center hover:bg-blue-800 transition"
+								href="#"
+								><i class="text-lg font-bold">f</i></a
+							>
+							<a
+								class="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center hover:bg-blue-600 transition"
+								href="#"
+								><i class="text-lg font-bold">in</i></a
+							>
+							<a
+								class="w-10 h-10 rounded-full bg-blue-800 text-white flex items-center justify-center hover:bg-blue-700 transition"
+								href="#"
+								><i class="text-lg font-bold">yt</i></a
+							>
+						</div>
+					</div>
+				</div>
+				<div
+					class="pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center bg-white dark:bg-black p-4 mt-8"
+				>
+					<p class="text-sm text-gray-600 dark:text-gray-400">
+						Basic Line Sistemas - © 2024
+					</p>
+					<p class="text-sm text-gray-500 dark:text-gray-500 opacity-80">
+						Desenvolvendo o futuro.
+					</p>
+				</div>
+			</div>
+		</footer>
+		<script>
+			const themeToggle = document.getElementById("theme-toggle");
+			const html = document.documentElement;
+
+			// Aplica o tema salvo ao carregar a página
+			if (localStorage.getItem("theme") === "dark") {
+				html.classList.add("dark");
+			}
+
+			// Alterna o tema e salva a preferência
+			themeToggle.addEventListener("click", () => {
+				html.classList.toggle("dark");
+				const isDark = html.classList.contains("dark");
+				localStorage.setItem("theme", isDark ? "dark" : "light");
+			});
+		</script>
+	</body>
+</html>
